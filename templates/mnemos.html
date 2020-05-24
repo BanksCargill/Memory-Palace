@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Mnemonics Table{% endblock %}
+{% block content %}
+<!-- main container -->
+<!-- show mnemonics table -->
+<div class="container my-3">
+    <h2>Mnemonics Table</h2>
+    <blockquote class="blockquote">You can edit Person/Action mnemonics from this page.</blockquote>
+    <a class="btn btn-outline-primary m-2" href="{{ url_for('mnemos_filter') }}">FILTER table for blank Mnemonics</a>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Digits</th>
+            <th scope="col">Person</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in context.rows %}
+        <form action="/update_mnemo" class="form-inline" method="post">
+            <tr>
+                <input name="mnemo_id" type="hidden" value="{{ row[0] }}">
+                <!-- adds leading zero if necessary -->
+                <th scope="row">{% if row[0] < 10 and row[0] > -1 %}0{% endif %}{{ row[0] }}</th>
+                <td><input class="form-control" name="person" type="text" value="{{ row[1] }}"></td>
+                <td><input class="form-control" name="action" type="text" value="{{ row[2] }}"></td>
+                <td>
+                    <button class="btn btn-outline-warning" type="submit">Update</button>
+                </td>
+            </tr>
+        </form>
+        {% endfor %}
+        </tbody>
+    </table>
+</div> <!-- close top container -->
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Message{% endblock %}
+{% block content %}
+<!-- main container -->
+<main class="container m-5">
+<!-- Displays Success or Failure messages when creating palaces -->
+    <h2>{{ context.message }}</h2>
+    <div>{{ context.instruction }}</div>
+</main> <!-- close top container -->
+{% endblock %}

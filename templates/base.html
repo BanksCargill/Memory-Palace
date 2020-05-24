@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<!-- Base layout, all others inherit this one -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body style="font-family:Roboto Mono, monospace">
+<header class="navbar bg-light">
+    <a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+    <form class="form-inline">
+        <select class="custom-select" id="header_select" style="min-width:200px">
+            <option disabled hidden selected value="-99">Select a Palace</option>
+            {% for i in context.list_palaces %}
+            <option value="{{ i[0] }}">{{ i[1] }}</option>
+            {% endfor %}
+        </select>
+        <button class="btn btn-outline-primary m-2" onclick="view_palace()" type="button">View</button>
+        <button class="btn btn-outline-danger m-2" onclick="delete_palace()" type="button">Delete</button>
+        <a class="btn btn-outline-primary d-block m-2" href="{{ url_for('new_palace') }}">New Palace</a>
+        <a class="btn btn-outline-primary d-block m-2" href="{{ url_for('mnemos') }}">Mnemonics</a> <!-- link formatted as button to integrate with others -->
+    </form>
+</header>
+<!-- Child content -->
+{% block content %}{% endblock %}
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS for bootstrap -->
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- JavaScript for the webapp -->
+<script src="{{ url_for('.static', filename = 'pjt_scripts.js') }}" type="text/javascript"></script> <!-- Our sripts -->
+</body>
+</html>

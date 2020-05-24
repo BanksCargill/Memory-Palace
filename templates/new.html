@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Create A Memory Palace{% endblock %}
+{% block content %}
+<!-- main container -->
+<main class="container m-5">
+  <form class="form-inline" action="/new_palace" method="post">
+      <input class="form-control col-12 m-1" type="text" name="name" placeholder="Name [must be unique]">
+      <input class="form-control col-12 m-1" type="text" name="desc" placeholder="Description">
+      <button class="btn btn-outline-success col-12 m-1" type="submit">Create</button>
+  </form>
+  <div>[create new palace then go to view page to add loci]</div>
+</main> <!-- close top container -->
+{% endblock %}

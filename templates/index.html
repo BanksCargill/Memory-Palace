@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Memory Palaces{% endblock %}
+{% block content %}
+<!-- main container -->
+<!-- homepage with directions and memory palace info and links to other pages -->
+<article class="container my-5">
+    <h3>About</h3>
+    <p>The world record for memorization of the digits of the number pi is 100,000 digits. How can
+        such a feat be accomplished? Thru the memorization technique commonly referred to as
+        Memory Palaces.
+        The idea of a memory palace is that you choose a location (the palace) that you are familiar
+        with and place the numbers that need to be memorized in a predetermined path within
+        that palace. These “locations” are called loci. The path should be logical, allowing for an
+        ordered traversal, for example you may choose a path starting from the entrance of your
+        house and repeatedly turning to your left for the next “location”, like so: location one:
+        entrance, two: living room, three: kitchen etc. More details about memory palaces can be
+        found <a href="https://en.wikipedia.org/wiki/Method_of_loci"> here.</a>
+    <p>Our webapp would create a tool for easily creating, editing and recalling memory palaces
+        specific to number memorization. We will use a person-action number system to create
+        mnemonics for every two digit combination from 00 to 99.</p>
+		<p>A person-action number system allows the user to commit a table of digits that are 
+				associated with a person and an action to memory. To utilize this memorized table, 
+				when the digits are the first 2 digits in a 4 digit number, the person is used. When
+				the digits are the second 2 digits of a 4 person number, the action is used. This 
+				enables the user to assign 4 digits to each locus, and quickly recall them by 
+				using the attributed person/action sequence from the mnemonics table that they have 
+				committed to memory.
+		</p>
+		<p></p>
+		<h3>Directions</h3>
+    <p>To begin with, you are going to want to decide on a list of numbers that you want to 
+				memorize. These could be family members birth-years (Example palace: Childhood home) 
+				or the years that the Star Wars films were released in order of episode (Example palace:
+				Subaru Outback).</p>
+		<p>Start by creating a palace, ideally using a location you are intimately familiar with
+				to make "walking" through it a simple process</p>
+    <p>Fill the palace with loci. Each locus can hold between 1 and 4 digits, in 2 digit increments.
+				The -1 option, when creating a locus, indicates that those two digits will not exist.</p>
+		<p>Once you have the loci created, it's time to add your own mnemonics.
+				Try to assign people and actions that are easy for you to envision so that when you 
+				use the mnemonic, you can quickly see the person doing the action</p>
+		
+		<p> Now it's time to practice. Memorize the mnemonics table so that you can quickly recall
+				any of the numbers with person and action. Once you've done this, walk through your palace,
+				looking at each locus and envisioning the person/action that will inform you of the 
+				number you want to remember.</p>
+				
+    <h3>URL + Descriptions</h3>
+    <p>
+        <div>
+            <a href="index">index.html</a>
+    <p>
+        Home page. Details information about our website
+    </p>
+    </div>
+    <div>
+        <a href="new">new.html</a>
+        <p>
+            This page enables the user to create a new memory palace by entering a
+            name (unique) and description.
+        </p>
+    </div>
+    <div>
+        <a href="view">view.html</a>
+        <p>
+            View: allows viewing of all information stored in palace. Links to edit.html and
+            addLoci.html so that the user can choose loci to edit or add/delete to/from the end of
+            the chain of loci.
+        </p>
+    </div>
+    <div>
+        <a href="loci">loci.html</a>
+        <p>
+            Two main functions on this page. It allows the user to edit existing loci (name and data)
+            as well as displaying the associated mnemonics with the loci. It also displays all mnemonics
+            that are currently stored with the option to add to any digit that doesn't currently hold a
+            mnemonic or to edit any that do already hold mnemonics.
+        </p>
+    </div>
+
+    <div>
+        <a href="mnemos">mnemonics.html</a>
+        <p>
+            This page will allow the user to add and edit the mnemonics data.
+						It will also contain our search/filter function that enables the 
+						user to filter digits according to whether or not they have 
+						been assigned a person and an action.
+        </p>
+    </div>
+
+
+    </p>
+
+</article> <!-- close top container  -->
+{% endblock %}
