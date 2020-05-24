@@ -1,10 +1,12 @@
 # Memory-Palace
 
+Not currently hosted. 
+
 Web app to facilitate adoption of the memory palace paradigm, a technique for rapid and precise memory recall. 
 Focuses on memorizing numbers.
 
 Created by Banks Cargill and Shylton Matta
-Not currently hosted. 
+
 
 Project Outline:
 
